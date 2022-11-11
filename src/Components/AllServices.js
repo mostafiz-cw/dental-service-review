@@ -8,12 +8,12 @@ const AllServices = () => {
   const { loading } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch("http://localhost:5000/services")
+    fetch("http://localhost:5000/allservice")
       .then((res) => res.json())
       .then((data) => setAllservices(data));
   }, []);
 
-  
+
   if (loading) {
     return <SpinnerAdd></SpinnerAdd>;
   }
@@ -49,7 +49,7 @@ const AllServices = () => {
                   {service.service_title}
                 </h3>
                 <p className="mt-6 mb-8 text-gray-600 dark:text-gray-300">
-                  {service.description}
+                  {service.description.slice(0,100)}...
                 </p>
                 <div className="flex justify-between">
                   <p>Price ${service.price}</p>
