@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Context/AuthProvider/AuthProvider";
 
 const LogIn = () => {
@@ -9,9 +9,9 @@ const LogIn = () => {
   // jump others page after log in
   const navigate = useNavigate();
 
-  const location = useLocation();
+  // const location = useLocation();
 
-  const from = location.state?.from?.pathname || "/";
+  // const from = location.state?.from?.pathname || "/";
   // event handeler
   const handleLogin = (event) => {
     event.preventDefault();
@@ -25,7 +25,8 @@ const LogIn = () => {
     loginWithEmail(email, password)
       .then((result) => {
         console.log(result.user);
-        navigate(from, { replace: true });
+        // navigate(from, { replace: true });
+        navigate('/');
       })
       .catch((err) => {
         setError(err.message);
