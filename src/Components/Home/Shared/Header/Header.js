@@ -31,7 +31,7 @@ const Header = () => {
                   Home
                 </Nav.Link>
               </Link>
-              <Link to="/allservice" className="no-underline font-semibold">
+              <Link to="/service" className="no-underline font-semibold">
                 <Nav.Link href="#home" className="text-dark">
                   Service
                 </Nav.Link>

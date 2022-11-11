@@ -8,7 +8,7 @@ const AllServices = () => {
   const { loading } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch("http://localhost:5000/allservice")
+    fetch("http://localhost:5000/service")
       .then((res) => res.json())
       .then((data) => setAllservices(data));
   }, []);
