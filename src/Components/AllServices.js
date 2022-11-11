@@ -1,12 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Context/AuthProvider/AuthProvider";
+import SpinnerAdd from "./SpinnerAdd";
 
 const AllServices = () => {
-
   const [allservices, setAllservices] = useState();
-  const {loading} = useContext(AuthContext);
-  
+  const { loading } = useContext(AuthContext);
 
   useEffect(() => {
     fetch("http://localhost:5000/services")
@@ -14,6 +13,10 @@ const AllServices = () => {
       .then((data) => setAllservices(data));
   }, []);
 
+  
+  if (loading) {
+    return <SpinnerAdd></SpinnerAdd>;
+  }
 
   console.log(allservices);
   return (

@@ -3,8 +3,8 @@ import Spinner from "react-bootstrap/Spinner";
 
 const SpinnerAdd = () => {
   return (
-    <div>
-      <Spinner animation="border" role="status">
+    <div className="flex justify-center h-screen items-center">
+      <Spinner animation="border" variant="success" role="status">
         <span className="visually-hidden">Loading...</span>
       </Spinner>
     </div>
