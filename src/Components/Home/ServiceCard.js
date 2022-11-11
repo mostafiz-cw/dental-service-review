@@ -40,7 +40,7 @@ const ServiceCard = () => {
                   {service.service_title}
                 </h3>
                 <p className="mt-6 mb-8 text-gray-600 dark:text-gray-300">
-                  {service.description}
+                  {service.description.slice(0,100)}...
                 </p>
                 <div className="flex justify-between">
                   <p>Price ${service.price}</p>
