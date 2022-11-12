@@ -1,3 +1,61 @@
+### Website Name: Soothing Dental
+## Live Website Link: https://a-11-service-review-app.web.app/
+
+## Following tecenology I used for this project
+
+
+* react router
+* css framework
+* Tailwind
+* Bootstrap
+* react bootstarap
+* firebase for auth
+* express js for backend
+* vercel deployment
+* mongodb atlas
+* express.js
+* react-photo-view
+
+
+
+# Features and Functionality
+
+* 100% responsive
+* Sign in and register form
+* Log out nad nav bar 
+* Toggle Button
+* add service 
+* CRUD oparation
+* my reviews
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
