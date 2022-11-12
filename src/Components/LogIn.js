@@ -46,7 +46,9 @@ const LogIn = () => {
       console.log(user);
       navigate('/');
     })
-    .catch(err => console.error(err))
+    .catch(err => {
+      setError(err.message);
+    })
 
   }
 
@@ -57,10 +59,10 @@ const LogIn = () => {
           <div className="m-auto  py-12">
             {/* <h3 className="text-center">Please Log In</h3> */}
             <div className="mt-12 rounded-3xl border bg-gray-50 dark:border-gray-700 dark:bg-gray-800 -mx-6 sm:-mx-10 p-8 sm:p-10">
-              <h3 className="text-2xl font-semibold text-gray-700 dark:text-white">
+              <h3 className="md:text-4xl font-semibold text-gray-700 dark:text-white">
                 Login to your account
               </h3>
-              <div className="mt-12 flex flex-wrap sm:grid gap-6 grid-cols-2">
+              <div className="mt-12 grid">
                 <button onClick={signInWithGoogle} className="w-full h-11 rounded-full border border-gray-300/75 bg-white px-6 transition active:bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:hover:bg-gray-800 dark:hover:border-gray-700">
                   <div className="w-max mx-auto flex items-center justify-center space-x-4">
                     <img
@@ -73,7 +75,7 @@ const LogIn = () => {
                     </span>
                   </div>
                 </button>
-                <button className="w-full h-11 rounded-full bg-gray-900 px-6 transition hover:bg-gray-800 focus:bg-gray-700 active:bg-gray-600 dark:bg-gray-700 dark:border dark:border-gray-600 dark:hover:bg-gray-800 dark:hover:border-gray-700">
+                {/* <button className="w-full h-11 rounded-full bg-gray-900 px-6 transition hover:bg-gray-800 focus:bg-gray-700 active:bg-gray-600 dark:bg-gray-700 dark:border dark:border-gray-600 dark:hover:bg-gray-800 dark:hover:border-gray-700">
                   <div className="w-max mx-auto flex items-center justify-center space-x-4 text-white">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -87,7 +89,7 @@ const LogIn = () => {
                       With Github
                     </span>
                   </div>
-                </button>
+                </button> */}
               </div>
               <form
                 onSubmit={handleLogin}

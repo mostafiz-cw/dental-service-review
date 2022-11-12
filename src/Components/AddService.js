@@ -28,7 +28,7 @@ const AddService = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
-          alert("Service Added");
+          alert("Service Added Successfully");
           form.reset();
 
         }
@@ -44,7 +44,7 @@ const AddService = () => {
               <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
                 Add Your Service
               </h1>
-              <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
+              <p className="text-black lg:w-2/3 mx-auto leading-relaxed text-base">
                 What service do you work? We want to know. To add your service,
                 just fill this form and we will add your service.
               </p>
@@ -55,7 +55,7 @@ const AddService = () => {
                   <div className="relative">
                     <label
                       htmlFor="name"
-                      className="leading-7 text-sm text-gray-600"
+                      className="leading-7 text-sm text-black"
                     >
                       Service Title
                     </label>
@@ -72,7 +72,7 @@ const AddService = () => {
                   <div className="relative">
                     <label
                       htmlFor="url"
-                      className="leading-7 text-sm text-gray-600"
+                      className="leading-7 text-sm text-black"
                     >
                       Price
                     </label>
@@ -89,7 +89,7 @@ const AddService = () => {
                   <div className="relative">
                     <label
                       htmlFor="url"
-                      className="leading-7 text-sm text-gray-600"
+                      className="leading-7 text-sm text-black"
                     >
                       Image Url
                     </label>
@@ -106,7 +106,7 @@ const AddService = () => {
                   <div className="relative">
                     <label
                       htmlFor="message"
-                      className="leading-7 text-sm text-gray-600"
+                      className="leading-7 text-sm text-black"
                     >
                       Description
                     </label>
@@ -121,7 +121,7 @@ const AddService = () => {
                   </div>
                 </div>
                 <div className="p-2 w-full">
-                  <button className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+                  <button className="font-semibold flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
                     Add service
                   </button>
                 </div>

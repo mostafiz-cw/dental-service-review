@@ -7,6 +7,7 @@ import "react-photo-view/dist/react-photo-view.css";
 
 const AllServices = () => {
   const [allservices, setAllservices] = useState();
+  const [loader, setLoader] = useState(true);
   const { loading } = useContext(AuthContext);
 
   useEffect(() => {
@@ -14,22 +15,26 @@ const AllServices = () => {
       "https://a-11-service-review-server-side-mostafiz-cw.vercel.app/service"
     )
       .then((res) => res.json())
-      .then((data) => setAllservices(data));
+      .then((data) => {
+        setAllservices(data);
+        setLoader(false);
+      });
   }, []);
 
-  if (loading) {
-    return <SpinnerAdd></SpinnerAdd>;
-  }
+  // if (loading) {
+  //   return <SpinnerAdd></SpinnerAdd>;
+  // }
 
   console.log(allservices);
   return (
     <div className="py-12">
       <div className="xl:container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
         <div className="mb-12 space-y-2 text-center">
+          <div>{loader && <SpinnerAdd></SpinnerAdd>}</div>
           <h2 className="text-3xl font-bold text-gray-800 md:text-4xl dark:text-white">
             Our All Service is here.
           </h2>
-          <p className="lg:mx-auto lg:w-6/12 text-gray-600 dark:text-gray-300">
+          <p className="lg:mx-auto lg:w-6/12 text-black dark:text-gray-300">
             A soothing environment to get all of your aesthetic & healthy
             smile’s needs.
           </p>

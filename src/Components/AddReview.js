@@ -20,17 +20,20 @@ const AddReview = ({ userId }) => {
       name,
       url,
       message,
-      email
+      email,
     };
     console.log(userReview);
 
-    fetch("https://a-11-service-review-server-side-mostafiz-cw.vercel.app/reviews", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(userReview),
-    })
+    fetch(
+      "https://a-11-service-review-server-side-mostafiz-cw.vercel.app/reviews",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(userReview),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
@@ -131,7 +134,7 @@ const AddReview = ({ userId }) => {
               us, we will be happy for your honest review.
             </p> */}
             <div className="p-2 w-full">
-              <Link to={'/login'}>
+              <Link to={"/login"} className="no-underline font-semibold">
                 <button className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
                   Log In
                 </button>

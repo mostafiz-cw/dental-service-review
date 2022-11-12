@@ -21,7 +21,7 @@ const ServiceCard = () => {
           <h2 className="text-3xl font-bold text-gray-800 md:text-4xl dark:text-white">
             Our Services
           </h2>
-          <p className="lg:mx-auto lg:w-6/12 text-gray-600 dark:text-gray-300">
+          <p className="lg:mx-auto lg:w-6/12 text-black dark:text-gray-300">
             Quality dental services including concierge and cosmetic dentistry.
           </p>
         </div>
@@ -47,7 +47,7 @@ const ServiceCard = () => {
                 <h3 class="text-2xl font-semibold text-blue-600 dark:text-white">
                   {service.service_title}
                 </h3>
-                <p className="mt-6 mb-8 text-gray-600 dark:text-gray-300">
+                <p className="mt-6 mb-8 text-black dark:text-gray-300">
                   {service.description.slice(0, 100)}...
                 </p>
                 <div className="flex justify-between text-black font-semibold">

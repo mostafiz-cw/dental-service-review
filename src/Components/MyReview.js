@@ -31,6 +31,11 @@ const MyReview = () => {
             .then(res => res.json())
             .then(data => {
               console.log(data)
+              if(data.deletedCount > 0){
+                alert("Deleted Successfully");
+                const remaining = reviews.filter(review => review._id !== _id);
+                setReviews(remaining);
+              }
               navigate('/myreview');
 
             })
