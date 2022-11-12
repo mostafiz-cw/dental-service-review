@@ -18,7 +18,7 @@ const AddService = () => {
     };
     console.log(addService);
 
-    fetch(`http://localhost:5000/addservice`, {
+    fetch(`https://a-11-service-review-server-side-mostafiz-cw.vercel.app/addservice`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -29,6 +29,8 @@ const AddService = () => {
       .then((data) => {
         if (data.acknowledged) {
           alert("Service Added");
+          form.reset();
+
         }
       });
   };

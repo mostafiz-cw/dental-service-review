@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Context/AuthProvider/AuthProvider";
 import SpinnerAdd from "./SpinnerAdd";
+import { PhotoProvider, PhotoView } from "react-photo-view";
+import "react-photo-view/dist/react-photo-view.css";
 
 const AllServices = () => {
   const [allservices, setAllservices] = useState();
@@ -34,25 +36,32 @@ const AllServices = () => {
         </div>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {allservices?.map((service) => (
-            <div key={service._id} className="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
-              <div className="relative overflow-hidden rounded-xl">
-                <img
-                  src={service.img_url}
-                  alt="art cover"
-                  loading="lazy"
-                  width="1000"
-                  height="667"
-                  className="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105"
-                />
-              </div>
+            <div
+              key={service._id}
+              className="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10"
+            >
+              <PhotoProvider>
+                <div className="relative overflow-hidden rounded-xl">
+                  <PhotoView src={service.img_url}>
+                    <img
+                      src={service.img_url}
+                      alt="art cover"
+                      loading="lazy"
+                      width="1000"
+                      height="667"
+                      className="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105"
+                    />
+                  </PhotoView>
+                </div>
+              </PhotoProvider>
               <div className="mt-6 relative">
-                <h3 class="text-2xl font-semibold text-gray-800 dark:text-white">
+                <h3 class="text-2xl font-semibold text-blue-600 dark:text-white">
                   {service.service_title}
                 </h3>
-                <p className="mt-6 mb-8 text-gray-600 dark:text-gray-300">
+                <p className="mt-6 mb-8 text-black dark:text-gray-300">
                   {service.description.slice(0, 100)}...
                 </p>
-                <div className="flex justify-between">
+                <div className="flex justify-between font-semibold text-black">
                   <p>Price ${service.price}</p>
                   <Link
                     to={`/services/${service._id}`}

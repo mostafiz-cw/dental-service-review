@@ -1,30 +1,34 @@
 import React from "react";
+import { PhotoProvider, PhotoView } from "react-photo-view";
 import { useLoaderData } from "react-router-dom";
 import AddReview from "./AddReview";
 import Reviews from "./Reviews";
 
 const ServiceDetails = () => {
-//   const { service_title, description, img_url, price,_id} = useLoaderData();
+  //   const { service_title, description, img_url, price,_id} = useLoaderData();
   const [services, allReviews] = useLoaderData();
 
-//   console.log(services,allReviews);
+  //   console.log(services,allReviews);
 
   return (
     <div>
       <div className="container flex justify-center my-10">
         <div className="max-w-2xl overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
-          <img
-            className="object-cover w-full h-64"
-            src={services.img_url}
-            alt="Article"
-          />
+          <PhotoProvider>
+            <PhotoView src={services.img_url}>
+              <img
+                className="object-cover w-full h-64"
+                src={services.img_url}
+                alt="Article"
+              />
+            </PhotoView>
+          </PhotoProvider>
           <div className="p-6">
             <div>
               <span className="text-xs font-medium text-blue-600 uppercase dark:text-blue-400">
                 Service
               </span>
               <p
-                
                 className="block mt-2 text-blue-600 text-2xl font-semibold transition-colors duration-300 transform dark:text-white no-underline"
                 tabIndex={0}
               >

@@ -1,9 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../Context/AuthProvider/AuthProvider";
 
 const MyReview = () => {
   const { user } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
+
+  const navigate = useNavigate();
 
 //   load user review 
   useEffect(() => {
@@ -26,7 +29,11 @@ const MyReview = () => {
                 method: 'DELETE'
             })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+              console.log(data)
+              navigate('/myreview');
+
+            })
             .catch(err => console.log(err))
         }
     }
@@ -36,7 +43,9 @@ const MyReview = () => {
       <div className="py-16">
         <div className="xl:container m-auto px-6 text-gray-600 dark:text-gray-300 md:px-12 xl:px-6">
           <h2 className="mb-12 text-center text-2xl font-bold text-gray-800 dark:text-white md:text-4xl">
-            What's our customers say {reviews.length}
+            {
+              reviews.length < 1 ?  "No review found" : "My Review"
+            }
           </h2>
           <div className="grid gap-8 md:grid-rows-2 lg:grid-cols-2">
             {reviews.map((review) => (
