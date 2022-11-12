@@ -1,18 +1,20 @@
+import { GoogleAuthProvider } from "firebase/auth";
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Context/AuthProvider/AuthProvider";
 
 const LogIn = () => {
   const [error, setError] = useState("");
-  const { loginWithEmail } = useContext(AuthContext);
+  const { loginWithEmail, signInProvider } = useContext(AuthContext);
 
   // jump others page after log in
   const navigate = useNavigate();
 
   // const location = useLocation();
-
   // const from = location.state?.from?.pathname || "/";
   // event handeler
+
+  // log in with email and password
   const handleLogin = (event) => {
     event.preventDefault();
     setError("");
@@ -33,6 +35,21 @@ const LogIn = () => {
       });
   };
 
+  // google auth provider
+  const googleProvider = new GoogleAuthProvider();
+
+  // log in with google
+  const signInWithGoogle = () =>{
+    signInProvider(googleProvider)
+    .then(result => {
+      const user = result.user;
+      console.log(user);
+      navigate('/');
+    })
+    .catch(err => console.error(err))
+
+  }
+
   return (
     <div>
       <div className="m-auto xl:container px-12 sm:px-0 mx-auto">
@@ -44,7 +61,7 @@ const LogIn = () => {
                 Login to your account
               </h3>
               <div className="mt-12 flex flex-wrap sm:grid gap-6 grid-cols-2">
-                <button className="w-full h-11 rounded-full border border-gray-300/75 bg-white px-6 transition active:bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:hover:bg-gray-800 dark:hover:border-gray-700">
+                <button onClick={signInWithGoogle} className="w-full h-11 rounded-full border border-gray-300/75 bg-white px-6 transition active:bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:hover:bg-gray-800 dark:hover:border-gray-700">
                   <div className="w-max mx-auto flex items-center justify-center space-x-4">
                     <img
                       src="https://svgshare.com/i/ng7.svg"
