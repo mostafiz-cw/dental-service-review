@@ -24,7 +24,7 @@ const AddReview = ({ userId }) => {
     };
     console.log(userReview);
 
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://a-11-service-review-server-side-mostafiz-cw.vercel.app/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",

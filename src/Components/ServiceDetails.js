@@ -23,13 +23,13 @@ const ServiceDetails = () => {
               <span className="text-xs font-medium text-blue-600 uppercase dark:text-blue-400">
                 Service
               </span>
-              <a
-                href="/"
-                className="block mt-2 text-2xl font-semibold text-gray-800 transition-colors duration-300 transform dark:text-white hover:text-gray-600 hover:underline"
+              <p
+                
+                className="block mt-2 text-blue-600 text-2xl font-semibold transition-colors duration-300 transform dark:text-white no-underline"
                 tabIndex={0}
               >
                 {services.service_title}
-              </a>
+              </p>
               <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
                 {services.description}
               </p>
@@ -37,7 +37,7 @@ const ServiceDetails = () => {
             <div className="mt-4">
               <div className="flex items-center">
                 <div className="flex items-center">
-                  <p>Price : {services.price}</p>
+                  <p className="font-semibold">Price : {services.price}</p>
                   {/* <img
                   className="object-cover h-10 rounded-full"
                   src="https://images.unsplash.com/photo-1586287011575-a23134f797f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=48&q=60"

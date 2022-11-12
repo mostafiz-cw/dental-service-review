@@ -7,7 +7,7 @@ const MyReview = () => {
 
 //   load user review 
   useEffect(() => {
-    fetch(`http://localhost:5000/myreview?email=${user.email}`)
+    fetch(`https://a-11-service-review-server-side-mostafiz-cw.vercel.app/myreview?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -22,7 +22,7 @@ const MyReview = () => {
     const deleteHandeler = (_id) => {
         const confirm = window.confirm('Are you sure to delete?');
         if(confirm){
-            fetch(`http://localhost:5000/myreview/${_id}`, {
+            fetch(`https://a-11-service-review-server-side-mostafiz-cw.vercel.app/myreview/${_id}`, {
                 method: 'DELETE'
             })
             .then(res => res.json())

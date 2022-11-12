@@ -5,7 +5,9 @@ const ServiceCard = () => {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/services")
+    fetch(
+      "https://a-11-service-review-server-side-mostafiz-cw.vercel.app/services"
+    )
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
@@ -15,11 +17,10 @@ const ServiceCard = () => {
       <div className="xl:container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
         <div className="mb-12 space-y-2 text-center">
           <h2 className="text-3xl font-bold text-gray-800 md:text-4xl dark:text-white">
-            {services.length}
+            Our Services
           </h2>
           <p className="lg:mx-auto lg:w-6/12 text-gray-600 dark:text-gray-300">
-            Quam hic dolore cumque voluptate rerum beatae et quae, tempore sunt,
-            debitis dolorum officia aliquid explicabo? Excepturi, voluptate?
+            Quality dental services including concierge and cosmetic dentistry.
           </p>
         </div>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -40,11 +41,15 @@ const ServiceCard = () => {
                   {service.service_title}
                 </h3>
                 <p className="mt-6 mb-8 text-gray-600 dark:text-gray-300">
-                  {service.description.slice(0,100)}...
+                  {service.description.slice(0, 100)}...
                 </p>
                 <div className="flex justify-between">
                   <p>Price ${service.price}</p>
-                  <Link to={`/services/${service._id}`} className="inline-block" href="/">
+                  <Link
+                    to={`/services/${service._id}`}
+                    className="inline-block"
+                    href="/"
+                  >
                     <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
                       Read more
                     </button>
@@ -104,6 +109,11 @@ const ServiceCard = () => {
           </div> */}
         </div>
       </div>
+      <Link to="/service">
+        <button className="mt-10 font-semibold flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+          See More
+        </button>
+      </Link>
     </div>
   );
 };

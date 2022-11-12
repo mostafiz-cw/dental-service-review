@@ -7,7 +7,9 @@ const Reviews = ({ allReview }) => {
     <div>
       <div className="py-16 container">
         <h2 className="mb-12 text-center text-2xl font-bold text-gray-800 dark:text-white md:text-4xl">
-          What's our customers say {allReview.length}
+          {
+            allReview.length < 1 ? <p>No review found</p> : <p>What's our customers say</p>
+          }
         </h2>
         <div className="xl:container m-auto px-6 text-gray-600 dark:text-gray-300 md:px-12 xl:px-6">
           <div className="grid gap-8 md:grid-rows-2 lg:grid-cols-2">

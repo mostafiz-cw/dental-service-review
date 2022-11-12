@@ -8,11 +8,12 @@ const AllServices = () => {
   const { loading } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch("http://localhost:5000/service")
+    fetch(
+      "https://a-11-service-review-server-side-mostafiz-cw.vercel.app/service"
+    )
       .then((res) => res.json())
       .then((data) => setAllservices(data));
   }, []);
-
 
   if (loading) {
     return <SpinnerAdd></SpinnerAdd>;
@@ -27,8 +28,8 @@ const AllServices = () => {
             Our All Service is here.
           </h2>
           <p className="lg:mx-auto lg:w-6/12 text-gray-600 dark:text-gray-300">
-            Quam hic dolore cumque voluptate rerum beatae et quae, tempore sunt,
-            debitis dolorum officia aliquid explicabo? Excepturi, voluptate?
+            A soothing environment to get all of your aesthetic & healthy
+            smile’s needs.
           </p>
         </div>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -49,7 +50,7 @@ const AllServices = () => {
                   {service.service_title}
                 </h3>
                 <p className="mt-6 mb-8 text-gray-600 dark:text-gray-300">
-                  {service.description.slice(0,100)}...
+                  {service.description.slice(0, 100)}...
                 </p>
                 <div className="flex justify-between">
                   <p>Price ${service.price}</p>
