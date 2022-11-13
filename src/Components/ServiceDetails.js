@@ -1,6 +1,7 @@
 import React from "react";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import { useLoaderData } from "react-router-dom";
+import useTitle from "../Hooks/useTitle";
 import AddReview from "./AddReview";
 import Reviews from "./Reviews";
 
@@ -8,7 +9,8 @@ const ServiceDetails = () => {
   //   const { service_title, description, img_url, price,_id} = useLoaderData();
   const [services, allReviews] = useLoaderData();
 
-  //   console.log(services,allReviews);
+  // dynamic title
+  useTitle("Service Details");
 
   return (
     <div>

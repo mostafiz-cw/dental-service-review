@@ -4,11 +4,15 @@ import { AuthContext } from "../Context/AuthProvider/AuthProvider";
 import SpinnerAdd from "./SpinnerAdd";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
+import useTitle from "../Hooks/useTitle";
 
 const AllServices = () => {
   const [allservices, setAllservices] = useState();
   const [loader, setLoader] = useState(true);
   const { loading } = useContext(AuthContext);
+
+  // dynamic title
+  useTitle("Services");
 
   useEffect(() => {
     fetch(

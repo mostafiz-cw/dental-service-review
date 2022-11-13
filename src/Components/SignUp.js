@@ -1,9 +1,13 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Context/AuthProvider/AuthProvider";
+import useTitle from "../Hooks/useTitle";
 
 const SignUp = () => {
   const {createUser} = useContext(AuthContext);
+
+  // dynamic title
+  useTitle("Signup");
 
   // handle event 
   const handleSignup = event => {

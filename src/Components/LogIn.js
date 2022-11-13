@@ -2,10 +2,14 @@ import { GoogleAuthProvider } from "firebase/auth";
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Context/AuthProvider/AuthProvider";
+import useTitle from "../Hooks/useTitle";
 
 const LogIn = () => {
   const [error, setError] = useState("");
   const { loginWithEmail, signInProvider } = useContext(AuthContext);
+
+  // dynamic title
+  useTitle("Login");
 
   // jump others page after log in
   const navigate = useNavigate();

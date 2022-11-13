@@ -5,6 +5,7 @@ import Blog from "../../Components/Blog";
 import Home from "../../Components/Home/Home";
 import LogIn from "../../Components/LogIn";
 import MyReview from "../../Components/MyReview";
+import NotFound404 from "../../Components/NotFound404";
 import ServiceDetails from "../../Components/ServiceDetails";
 import SignUp from "../../Components/SignUp";
 import Main from "../../Layout/Main";
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
         element: <Blog></Blog>
       }
     ],
+  },
+  {
+    path: '*',
+    element: <NotFound404></NotFound404>
   }
 ]);
 
