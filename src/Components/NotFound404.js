@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const NotFound404 = () => {
   return (
     <div>
-      <div className="flex justify-center mt-16">
+      <div className="container flex justify-center mt-16">
         <img
           src="https://i.ibb.co/12W5f54/404.png"
           alt="not found"
